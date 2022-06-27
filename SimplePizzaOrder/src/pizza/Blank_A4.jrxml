@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="226" pageHeight="509" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="65487af4-a9b0-47c4-a916-4b7cd63b67df">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="getParam" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT pizzadb.sales_product.id,
+	pizzadb.sales_product.sales_id,
+	pizzadb.sales_product.product_name,
+	pizzadb.sales_product.quantity,
+	pizzadb.sales_product.price,
+	pizzadb.sales_product.total,
+	pizzadb.sales_product.id,
+	pizzadb.sales.subtotal,
+	pizzadb.sales.payment,
+	pizzadb.sales.balance,
+	pizzadb.sales.id
+FROM pizzadb.sales_product
+	inner join pizzadb.sales ON 
+	 pizzadb.sales.id = pizzadb.sales_product.sales_id
+WHERE 
+	 pizzadb.sales.id =  $P{getParam}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sales_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="sales_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="sales_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLUMN_7" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales_product"/>
+	</field>
+	<field name="subtotal" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="subtotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="subtotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="payment"/>
+		<property name="com.jaspersoft.studio.field.label" value="payment"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="balance" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="balance"/>
+		<property name="com.jaspersoft.studio.field.label" value="balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLUMN_11" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="30" width="100" height="30" uuid="d44a9a06-45eb-47b0-ad3b-3436e177c3ff"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pizza]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="10" width="54" height="16" uuid="2b15ca1b-fb8d-48f6-ba99-d43aceede2a8"/>
+				<textElement>
+					<font fontName="Segoe UI Black" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="12" width="100" height="18" uuid="df3f58d9-ece3-4bf4-8a2b-0452d78f2245"/>
+				<textFieldExpression><![CDATA[$P{getParam}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="50" height="16" uuid="0a226314-cfa4-4224-890c-c742f9a05744">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0f07d18e-a4ac-40c5-93a7-3865e76b0f29"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[product_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="10" width="40" height="16" uuid="8a2c868e-097b-4420-8ac9-513b77e93df0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa8db548-b24d-427b-84f8-6f0356552ae1"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="10" width="30" height="16" uuid="1f934f96-a665-45b3-aab1-2bff79503433">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ca56b9f-155d-4952-ac19-a7696425f7ed"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="10" width="25" height="16" uuid="89f7c4f5-d7b2-49ef-a25b-f04f4b346023">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0970a553-f045-4813-b11f-44f5f7c3a494"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="13" uuid="dd068ba2-abbf-490f-81fa-2e8ac970561b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0f07d18e-a4ac-40c5-93a7-3865e76b0f29"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="40" height="13" uuid="15ed11e1-f5fb-4072-a05e-af625d5cea1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa8db548-b24d-427b-84f8-6f0356552ae1"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="30" height="13" uuid="eec65667-c6ed-471e-95f1-15719d5702cd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ca56b9f-155d-4952-ac19-a7696425f7ed"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="25" height="13" uuid="efe72a4b-c642-475d-a50f-b1799d59a296">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0970a553-f045-4813-b11f-44f5f7c3a494"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="17" width="185" height="1" uuid="e1b05cdb-c1e6-4f55-a1b7-c4d06aa42e3c"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="85">
+			<staticText>
+				<reportElement x="10" y="60" width="160" height="20" uuid="4bfbb3af-056b-4254-8312-b609b5ae383d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank You Come Again]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="40" width="30" height="12" uuid="b2e601cd-a551-4784-919a-4207a942fba5"/>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="40" width="25" height="12" uuid="a68d19f4-cea4-4843-9107-0300799582b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="20" width="30" height="12" uuid="a326d602-d532-417c-a517-8eb111f9c657"/>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="20" width="25" height="12" uuid="ce6272aa-e278-44ee-bfca-11d2103e2e11">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="25" height="12" uuid="605badc5-0ea2-49ac-90b5-4b4cce357359">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="0" width="30" height="12" uuid="90dc6a5c-8e54-4f7b-b616-8b85ad63f8dd"/>
+				<textElement>
+					<font fontName="Segoe UI Black" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="120"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="102"/>
+	</lastPageFooter>
+	<summary>
+		<band height="108" splitType="Stretch"/>
+	</summary>
+</jasperReport>
